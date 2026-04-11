@@ -17614,7 +17614,7 @@ PrefabInstance:
     - target: {fileID: 4915082991154533488, guid: d9af52bf624fb004abc7f4d28bdf39e2, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f5ba09e1d0fffb04fb23a7026f4e381d, type: 2}
+      objectReference: {fileID: 9100000, guid: 39a34ce25e9d8134cba3ae6f3d70d592, type: 2}
     - target: {fileID: 4915082991154533488, guid: d9af52bf624fb004abc7f4d28bdf39e2, type: 3}
       propertyPath: m_CullingMode
       value: 0
@@ -17734,6 +17734,7 @@ MonoBehaviour:
   gravity: -9.8
   jumpForce: 2
   cameraPivot: {fileID: 47239301}
+  animator: {fileID: 1617543328}
 --- !u!4 &1617543324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1357216421320936970, guid: d9af52bf624fb004abc7f4d28bdf39e2, type: 3}
@@ -17767,6 +17768,11 @@ MonoBehaviour:
   attackRange: 2
   damage: 20
   attackCooldown: 0.5
+--- !u!95 &1617543328 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4915082991154533488, guid: d9af52bf624fb004abc7f4d28bdf39e2, type: 3}
+  m_PrefabInstance: {fileID: 1617543317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1617929481
 PrefabInstance:
   m_ObjectHideFlags: 0
