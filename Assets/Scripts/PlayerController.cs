@@ -1,4 +1,4 @@
-ï»¿using UnityEngine;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 2f;
 
     public Transform cameraPivot;
-    public Animator animator;
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -15,7 +14,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -23,6 +21,7 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+        // dirección según cámara
         Vector3 forward = cameraPivot.forward;
         Vector3 right = cameraPivot.right;
 
@@ -32,6 +31,7 @@ public class PlayerController : MonoBehaviour
         forward.Normalize();
         right.Normalize();
 
+        // movimiento relativo a la cámara
         Vector3 move = forward * z + right * x;
 
         Vector3 cameraForward = cameraPivot.forward;
@@ -43,8 +43,10 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
         }
 
+        // movimiento
         controller.Move(move * speed * Time.deltaTime);
 
+        // gravedad
         if (controller.isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -53,12 +55,10 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        // salto
         if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
-
-        animator.SetFloat("VelX", x);
-        animator.SetFloat("VelY", z);
     }
 }
