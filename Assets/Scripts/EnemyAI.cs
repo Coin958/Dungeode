@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
@@ -6,9 +6,12 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     private NavMeshAgent agent;
 
+    public Animator animator;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -17,5 +20,8 @@ public class EnemyAI : MonoBehaviour
         {
             agent.SetDestination(player.position);
         }
+
+        // 🔥 ANIMACIÓN
+        animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 }
