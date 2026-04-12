@@ -17042,7 +17042,7 @@ PrefabInstance:
     - target: {fileID: 2829917917779058644, guid: 4c67ed6c086451b4db54ac4d24b626bb, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 0d84fa6df31b6a44ab04acc5287e254f, type: 2}
+      objectReference: {fileID: 9100000, guid: b96483bad95afb5469743561c4bdaace, type: 2}
     - target: {fileID: 8189179709687727534, guid: 4c67ed6c086451b4db54ac4d24b626bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.69200516
@@ -17162,6 +17162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1617543324}
+  animator: {fileID: 1562972564}
 --- !u!195 &1562972562
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17197,6 +17198,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+--- !u!95 &1562972564 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2829917917779058644, guid: 4c67ed6c086451b4db54ac4d24b626bb, type: 3}
+  m_PrefabInstance: {fileID: 1562972555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1565280112
 PrefabInstance:
   m_ObjectHideFlags: 0
